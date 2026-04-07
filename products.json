@@ -1,0 +1,26 @@
+[
+    {
+        "id": 3,
+        "code": "0180411000803",
+        "product_name": "100% Real Orange Juice",
+        "brand": "Unknown",
+        "image": "https://images.openfoodfacts.net/images/products/018/041/100/0803/front_en.3.400.jpg",
+        "nutriscore": "d"
+    },
+    {
+        "id": 4,
+        "code": "3274080005003",
+        "product_name": "Eau De Source",
+        "brand": "Cristaline",
+        "image": "https://images.openfoodfacts.net/images/products/327/408/000/5003/front_en.797.400.jpg",
+        "nutriscore": "a"
+    },
+    {
+        "id": 5,
+        "code": "3017624010701",
+        "product_name": "Nutella",
+        "brand": "Ferrero",
+        "image": "https://images.openfoodfacts.net/images/products/301/762/401/0701/front_en.54.400.jpg",
+        "nutriscore": "e"
+    }
+]
