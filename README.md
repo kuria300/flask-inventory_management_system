@@ -96,23 +96,13 @@ Each inventory item contains:
 - `image`: Product image URL
 - `nutriscore`: Nutritional score
 
-## Error Handling
-
-The API returns appropriate HTTP status codes:
-- 200: Success
-- 201: Created
-- 204: No Content (for deletions)
-- 400: Bad Request (validation errors)
-- 404: Not Found
-- 500: Internal Server Error
-
 ## Development
 
 ### Running in Debug Mode
 
 Set `DEBUG=True` in your `.env` file or environment variables to enable debug mode.
 
-## Usage Examples
+## Instructions to run application and iinteract with CLI and API for CRUD operations
 
 ### Using the CLI Interface
 
@@ -127,9 +117,10 @@ Set `DEBUG=True` in your `.env` file or environment variables to enable debug mo
    - **6. Exit**: Quit the CLI application
 
 The CLI communicates with the running Flask API server to perform these operations just choose 1,2,3,4,5,6 where necessary input data e.g: barcode- 3017624010701
+
 4. The system will fetch product details from OpenFoodFacts and add to inventory
 
-### Fetching Items endpoints example
+### Fetching Items endpoints example:
 
 - GET `http://127.0.0.1:5000/inventory` - Get all items
 - GET `http://127.0.0.1:5000/inventory/3017620422003` - Get item by barcode
