@@ -1,3 +1,4 @@
+
 # Inventory Management System
 
 A complete inventory management system for a small retail company built with Python and Flask. This system provides a RESTful API for managing inventory items, integrates with the OpenFoodFacts API for product data, and includes a command-line interface for easy interaction.
@@ -26,17 +27,20 @@ inventory-management/
 
 ## Prerequisites
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - pipenv (for dependency management)
 
 ## Installation
 
 1. **Clone or download the project files**
-
+   ```bash
+     git clone (https://github.com/username/repo.git)
+   ```
 2. **Install dependencies**
    ```bash
    pipenv install
-   pipenv sync
+   or
+   pipenv sync (uses exact versions on pipfile.lock)
    ```
 
 3. **Activate virtual environment**
@@ -44,8 +48,9 @@ inventory-management/
    pipenv shell
    ```
 
-4. **Set up environment variables** (optional)
-   Create a `.env` file in the project root or use provided Config.py:
+4. **Use provided Config.py**
+
+   Create a `.env` file in the project root or use provided Config.py and add to run in Debug mode:
    ```
    DEBUG=True
    ```
@@ -62,7 +67,7 @@ The server will start on `http://127.0.0.1:5000` by default.
 
 ### Using the Command-Line Interface
 
-The CLI is the main entrypoint and interacts with the running Flask API. Make sure the server is running first.
+The CLI is the main entrypoint and interacts with the running Flask API. Make sure the server is running first then run in Split terminal.
 
 ```bash
 python cli.py
@@ -74,13 +79,13 @@ python cli.py
 
 - **GET /inventory** - Retrieve all inventory items
 - **GET /inventory/<barcode>** - Retrieve a specific item by barcode
-- **POST /inventory** - Create a new inventory item (provide barcode, fetches from OpenFoodFacts)
-- **PATCH /inventory/<id>** - Update an existing item (nutriscore field)
+- **POST /inventory** - Create a new inventory item (provide barcode, it will fetches from OpenFoodFacts and create item)
+- **PATCH /inventory/<id>** - Update an existing item (nutriscore field for tests)
 - **DELETE /inventory/<id>** - Delete an item
 
 ### External API Integration
 
-The system integrates with OpenFoodFacts API automatically when adding items by barcode.
+The system integrates with `OpenFoodFacts` API automatically when adding items by barcode.
 
 ## Database
 
@@ -88,7 +93,7 @@ The application uses JSON file-based storage in `products.json`. Data persists b
 
 ### Product Model
 
-Each inventory item contains:
+Each inventory item in in-memory database, contains:
 - `id`: Auto-generated unique identifier
 - `code`: Barcode
 - `product_name`: Product name (from OpenFoodFacts)
@@ -98,16 +103,12 @@ Each inventory item contains:
 
 ## Development
 
-### Running in Debug Mode
-
-Set `DEBUG=True` in your `.env` file or environment variables to enable debug mode.
-
-## Instructions to run application and iinteract with CLI and API for CRUD operations
+## Instructions to run application and interact with CLI and API for CRUD operations
 
 ### Using the CLI Interface
 
 1. Start the Flask server in one terminal: `python app.py`
-2. Open another terminal and run the CLI: `python cli.py`
+2. Open another terminal and run the CLI (Make sure venv is activated for step 1 and 2) : `python cli.py`
 3. The CLI will display a menu with the following options:
    - **1. View All Items (GET)**: Displays all inventory items stored in products.json
    - **2. Search Item by Barcode (GET)**: Search for a specific item by entering its barcode
@@ -116,7 +117,7 @@ Set `DEBUG=True` in your `.env` file or environment variables to enable debug mo
    - **5. Delete Item (DELETE)**: Remove an item from inventory by providing the item ID
    - **6. Exit**: Quit the CLI application
 
-The CLI communicates with the running Flask API server to perform these operations just choose 1,2,3,4,5,6 where necessary input data e.g: barcode- 3017624010701
+The CLI communicates with the running Flask API server to perform these operations just choose 1,2,3,4,5,6 where necessary input data e.g: Enter barcode- 3017624010701
 
 4. The system will fetch product details from OpenFoodFacts and add to inventory
 
@@ -132,6 +133,17 @@ Managed via Pipenv:
 - requests
 - python-dotenv
 
+## Contributors
+   
+Eugene Kuria Maina
+
+## Contributing
+
+Contributions are always welcome!
+
+Please adhere to this project's `code of conduct`.
+
 ## License
 
 This project is open source and available under the MIT License.
+
